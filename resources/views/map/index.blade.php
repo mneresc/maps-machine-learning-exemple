@@ -1,23 +1,19 @@
 @extends('layouts.default')
 @section('title')
-   Generate Key
+   Map
 @stop
 @section('content')
+<div class="col-12" id="map">
 
-<div class="col-12">
-        <form class="col-12" method="POST" action="{{route('key.store')}}">
-            @csrf
-          <div class="form-group">
-          <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" name="email" value="{{ old('email') }}">
-          </div>
-          <button type="submit" class="btn btn-primary">Gerar Chaves</button>
-        </form>
 </div>
+@stop
+
+@section('js')
+    <script src="{{ asset('js/map.js') }}" defer></script>
 @stop
 
 @section('code')
 @php
-
 highlight_string('
 <?php use phpseclib\Crypt\RSA;
 $rsa = new RSA();
@@ -29,6 +25,5 @@ $keysCertificadoGerado = $rsa->createKey(2048);
 //"privatekey"=>"---chave privada----",
 // "publickey"=>"---chave publica---"
 //]')
-
 @endphp
 @stop

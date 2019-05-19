@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+Route::group(['prefix' => 'map'], function () {
+    Route::get('/access-points', 'MapController@listAccessPoint')->name('map.listAccessPoint');
+    Route::get('/suspicios-access-points', 'MapController@listSuspiciousAccessPoint')->name('map.listSuspiciousAccessPoint');
+});
+
