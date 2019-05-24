@@ -11,7 +11,9 @@
     <link href="{{  asset('css/bootstrap/bootstrap.css') }}" rel="stylesheet">
     <link href="{{  asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{  asset('css/ol.css') }}" rel="stylesheet">
-  <style type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.0.0/src/ol-layerswitcher.css" />
+
+<style type="text/css">
 @font-face {
   font-weight: 400;
   font-style:  normal;
@@ -96,6 +98,6 @@
     <script src="{{ asset('js/jquery.js') }}" defer></script>
     <script src="{{ asset('js/ol.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap/bootstrap.js') }}" defer></script>
+    <script src="https://unpkg.com/ol-layerswitcher@3.2.0"></script>
+  </body>
     @yield('js')
-<svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg><div id="shadowMeasureIt"></div><div id="divCoordMeasureIt"></div><div id="divRectangleMeasureIt"><div id="divRectangleBGMeasureIt"></div></div></body>
-<loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
