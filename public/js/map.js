@@ -93,7 +93,7 @@ $(function () {
         var map = new ol.Map({
             layers: [
                 new ol.layer.Tile({
-                    source: new ol.source.OSM()
+                    source: new ol.source.OSM() //EPSG:3857
                 }),
                 vectorLayer
             ],
