@@ -70,7 +70,7 @@ $(function () {
             // vectorSource.addFeature(new ol.Feature(new ol.geom.Point(parseFloat(ponto.latFrom), parseFloat(ponto.lonFrom))));
             marker.push(new ol.Feature({
                 geometry: new ol.geom.Point(
-                    ol.proj.fromLonLat([-15.8542,-47.9556])
+                    ol.proj.fromLonLat([parseFloat(ponto.latTo),parseFloat( ponto.lonTo)])
                 ),
             }));
 
