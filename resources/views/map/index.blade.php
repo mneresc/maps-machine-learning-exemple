@@ -3,7 +3,6 @@
    Map
 @stop
 @section('content')
-<input id="swipe" type="range" style="width: 100%">
 <div class="col-12" id="map">
 
 </div>
