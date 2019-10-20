@@ -1,9 +1,9 @@
 $(function () {
     var marker = [];
     var image = new ol.style.Circle({
-        radius: 5,
+        radius: 15,
         fill: null,
-        stroke: new ol.style.Stroke({ color: 'black', width: 1 })
+        stroke: new ol.style.Stroke({ color: 'red', width: 1 })
     });
 
     var styles = {
@@ -65,22 +65,15 @@ $(function () {
 
     $.get('http://localhost:8000/access', function (pontos) {
         pontos = JSON.parse(pontos);
-
         $.each(pontos, function (index, ponto) {
             // vectorSource.addFeature(new ol.Feature(new ol.geom.Point(parseFloat(ponto.latFrom), parseFloat(ponto.lonFrom))));
             marker.push(new ol.Feature({
                 geometry: new ol.geom.Point(
-                    ol.proj.fromLonLat([parseFloat(ponto.latTo),parseFloat( ponto.lonTo)])
+                    ol.proj.fromLonLat([ponto.latTo,ponto.lonTo])
                 ),
             }));
 
         });
-
-
-
-
-        console.log(marker);
-
 
         var vectorSource = new ol.source.Vector({
             features: marker

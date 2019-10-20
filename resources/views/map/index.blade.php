@@ -15,16 +15,28 @@
 
 @section('code')
 @php
-highlight_string('
-<?php use phpseclib\Crypt\RSA;
-$rsa = new RSA();
-$rsa->setPrivateKeyFormat(RSA::PRIVATE_FORMAT_PKCS8);
-$rsa->setPublicKeyFormat(RSA::PUBLIC_FORMAT_PKCS8);
-$rsa->setMGFHash("sha512");
-$keysCertificadoGerado = $rsa->createKey(2048);
-//$keysCertificadoGerado[
-//"privatekey"=>"---chave privada----",
-// "publickey"=>"---chave publica---"
-//]')
+highlight_string("
+        var vectorSource = new ol.source.Vector({
+            features: marker
+        });
+        var vectorLayer = new ol.layer.Vector({
+            source: vectorSource,
+            style: styleFunction
+        });
+
+        var map = new ol.Map({
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM() //EPSG:3857
+                }),
+                vectorLayer
+            ],
+            controls: [new ol.control.ScaleLine],
+            target: 'map',
+            view: new ol.View({
+                center: [0, 0],
+                zoom: 2
+            })
+        });")
 @endphp
 @stop
